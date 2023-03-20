@@ -7,6 +7,8 @@ import {
   FlatList,
 } from 'react-native';
 
+import BookList from './BookList';
+
 const data = require('../../assets/data/books.json');
 
 const BookContainer = () => {
@@ -23,11 +25,12 @@ const BookContainer = () => {
   return (
     <View>
       <Text>Book Container</Text>
-      <View style={{marginTop: 100}}>
+      <View style={{ marginTop: 100 }}>
         <FlatList
+          numColumns={2}
           horizontal
           data={books}
-          renderItem={({ item }) => <Text>{item.name}</Text>}
+          renderItem={({ item }) => <BookList key={item.id} item={item} />}
           keyExtractor={(item) => item.id}
         />
       </View>
