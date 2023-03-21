@@ -23,12 +23,11 @@ const BookContainer = () => {
   }, []);
 
   return (
-    <View>
+    <View style={styles.container}>
       <Text>Book Container</Text>
-      <View style={{ marginTop: 100 }}>
+      <View style={styles.listContainer}>
         <FlatList
           numColumns={2}
-          horizontal
           data={books}
           renderItem={({ item }) => <BookList key={item.id} item={item} />}
           keyExtractor={(item) => item.id}
@@ -37,5 +36,24 @@ const BookContainer = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flexWrap: 'wrap',
+    backgroundColor: 'gainsboro',
+  },
+  listContainer: {
+    width: '100%',
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    flexWrap: 'wrap',
+    backgroundColor: 'gainsboro',
+  },
+  center: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+});
 
 export default BookContainer;

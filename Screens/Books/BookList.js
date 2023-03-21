@@ -1,6 +1,8 @@
 import React from 'react';
 import { TouchableOpacity, View, Dimensions } from 'react-native';
 
+import BookCard from './BookCard';
+
 var { width } = Dimensions.get('window');
 
 /* - Within the TouchableOpacity tags you can touch 
@@ -12,9 +14,18 @@ var { width } = Dimensions.get('window');
    */
 
 const BookList = (props) => {
+  const { item } = props;
+
   return (
     <TouchableOpacity style={{ width: '50%' }}>
-      <View style={{ width: width / 2, backgroundColor: 'gainsboro' }}></View>
+      <View
+        style={{
+          width: width / 2,
+          backgroundColor: 'gainsboro',
+        }}
+      >
+        <BookCard {...item} />
+      </View>
     </TouchableOpacity>
   );
 };
