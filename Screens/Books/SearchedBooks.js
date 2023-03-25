@@ -1,11 +1,14 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, Dimensions } from 'react-native';
 import { Content, Left, Body, ListItem, Thumbnail, Text } from 'native-base';
+
+var { width } = Dimensions.get('window');
 
 const SearchedBooks = (props) => {
   const { booksFiltered } = props;
+  
   return (
-    <Content>
+    <Content style={{ width: width }}>
       {booksFiltered.length > 0 ? (
         booksFiltered.map((item) => (
           <ListItem

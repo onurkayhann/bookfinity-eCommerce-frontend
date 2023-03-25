@@ -3,21 +3,42 @@ import { View, StyleSheet, ActivityIndicator, FlatList } from 'react-native';
 import { Container, Header, Icon, Item, Input, Text } from 'native-base';
 
 import BookList from './BookList';
+import SearchedBooks from './SearchedBooks';
 
 const data = require('../../assets/data/books.json');
 
 const BookContainer = () => {
   const [books, setBooks] = useState([]);
   const [booksFiltered, setBooksFiltered] = useState([]);
+  const [highlight, setHighlight] = useState();
 
   useEffect(() => {
     setBooks(data);
     setBooksFiltered(data);
+    setHighlight(false);
 
     return () => {
       setBooks([]);
+      setBooksFiltered([]);
+      setHighlight();
     };
   }, []);
+
+  const searchBook = (text) => {
+    setBooksFiltered(
+      books.filter((index) =>
+        index.name.toLowerCase().includes(text.toLowerCase())
+      )
+    );
+  };
+
+  const openList = () => {
+    setHighlight(true);
+  };
+
+  const onBlur = () => {
+    setHighlight(false);
+  };
 
   return (
     <Container>
@@ -26,22 +47,30 @@ const BookContainer = () => {
           <Icon name='ios-search' />
           <Input
             placeholder='Search'
-            // onFocus={}
-            // onChangeText={(text) => }
+            onFocus={openList}
+            onChangeText={(text) => searchBook(text)}
           />
+          {highlight == true ? (
+            <Icon onPress={onBlur} name='ios-close' />
+          ) : null}
         </Item>
       </Header>
-      <View style={styles.container}>
-        <Text>Book Container</Text>
-        <View style={styles.listContainer}>
-          <FlatList
-            numColumns={2}
-            data={books}
-            renderItem={({ item }) => <BookList key={item.id} item={item} />}
-            keyExtractor={(item) => item.id}
-          />
+
+      {highlight == true ? (
+        <SearchedBooks booksFiltered={booksFiltered} />
+      ) : (
+        <View style={styles.container}>
+          <Text>Book Container</Text>
+          <View style={styles.listContainer}>
+            <FlatList
+              numColumns={2}
+              data={books}
+              renderItem={({ item }) => <BookList key={item.id} item={item} />}
+              keyExtractor={(item) => item.brand}
+            />
+          </View>
         </View>
-      </View>
+      )}
     </Container>
   );
 };
