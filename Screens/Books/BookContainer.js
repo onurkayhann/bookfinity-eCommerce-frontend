@@ -24,6 +24,7 @@ const BookContainer = () => {
     };
   }, []);
 
+  // Methods for books
   const searchBook = (text) => {
     setBooksFiltered(
       books.filter((index) =>
@@ -46,7 +47,7 @@ const BookContainer = () => {
         <Item>
           <Icon name='ios-search' />
           <Input
-            placeholder='Search'
+            placeholder='Search for products'
             onFocus={openList}
             onChangeText={(text) => searchBook(text)}
           />
