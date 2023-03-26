@@ -4,8 +4,10 @@ import { Container, Header, Icon, Item, Input, Text } from 'native-base';
 
 import BookList from './BookList';
 import SearchedBooks from './SearchedBooks';
+import Banner from '../../Shared/Banner';
 
 const data = require('../../assets/data/books.json');
+const categories = require('../../assets/data/categories.json');
 
 const BookContainer = () => {
   const [books, setBooks] = useState([]);
@@ -61,7 +63,9 @@ const BookContainer = () => {
         <SearchedBooks booksFiltered={booksFiltered} />
       ) : (
         <View style={styles.container}>
-          <Text>Book Container</Text>
+          <View>
+            <Banner />
+          </View>
           <View style={styles.listContainer}>
             <FlatList
               numColumns={2}
