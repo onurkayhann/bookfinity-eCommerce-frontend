@@ -13,16 +13,25 @@ const BookContainer = () => {
   const [books, setBooks] = useState([]);
   const [booksFiltered, setBooksFiltered] = useState([]);
   const [highlight, setHighlight] = useState();
+  const [categories, setCategories] = useState([]);
+  const [active, setActive] = useState();
+  const [initState, setInitState] = useState([]);
 
   useEffect(() => {
     setBooks(data);
     setBooksFiltered(data);
     setHighlight(false);
+    setCategories(categories);
+    setActive(-1);
+    setInitState(data);
 
     return () => {
       setBooks([]);
       setBooksFiltered([]);
       setHighlight();
+      setCategories([]);
+      setActive();
+      setInitState();
     };
   }, []);
 
