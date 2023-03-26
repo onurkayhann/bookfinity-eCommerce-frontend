@@ -5,6 +5,7 @@ import { Container, Header, Icon, Item, Input, Text } from 'native-base';
 import BookList from './BookList';
 import SearchedBooks from './SearchedBooks';
 import Banner from '../../Shared/Banner';
+import CategoryFilter from './CategoryFilter';
 
 const data = require('../../assets/data/books.json');
 const categories = require('../../assets/data/categories.json');
@@ -71,9 +72,12 @@ const BookContainer = () => {
       {highlight == true ? (
         <SearchedBooks booksFiltered={booksFiltered} />
       ) : (
-        <View style={styles.container}>
+        <View>
           <View>
             <Banner />
+          </View>
+          <View>
+            <CategoryFilter />
           </View>
           <View style={styles.listContainer}>
             <FlatList
