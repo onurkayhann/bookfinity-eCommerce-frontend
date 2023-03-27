@@ -1,11 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, ActivityIndicator, FlatList } from 'react-native';
+import {
+  View,
+  StyleSheet,
+  ActivityIndicator,
+  FlatList,
+  ScrollView,
+  Dimensions,
+} from 'react-native';
 import { Container, Header, Icon, Item, Input, Text } from 'native-base';
 
 import BookList from './BookList';
 import SearchedBooks from './SearchedBooks';
 import Banner from '../../Shared/Banner';
 import CategoryFilter from './CategoryFilter';
+
+var { height } = Dimensions.get('window');
 
 const data = require('../../assets/data/books.json');
 const bookCategories = require('../../assets/data/categories.json');
@@ -24,6 +33,7 @@ const BookContainer = () => {
     setBooksFiltered(data);
     setHighlight(false);
     setCategories(bookCategories);
+    setBooksCtg(data);
     setActive(-1);
     setInitState(data);
 
@@ -87,28 +97,33 @@ const BookContainer = () => {
       {highlight == true ? (
         <SearchedBooks booksFiltered={booksFiltered} />
       ) : (
-        <View>
+        <ScrollView>
           <View>
-            <Banner />
+            <View>
+              <Banner />
+            </View>
+            <View>
+              <CategoryFilter
+                categories={categories}
+                CategoryFilter={changeCtg}
+                booksCtg={booksCtg}
+                active={active}
+                setActive={setActive}
+              />
+            </View>
+            {booksCtg.length > 0 ? (
+              <View style={styles.listContainer}>
+                {booksCtg.map((item) => {
+                  return <BookList key={item._id.$oid} item={item} />;
+                })}
+              </View>
+            ) : (
+              <View style={[styles.center, { height: height / 2 }]}>
+                <Text>No products found</Text>
+              </View>
+            )}
           </View>
-          <View>
-            <CategoryFilter 
-              categories={categories}
-              CategoryFilter={changeCtg}
-              booksCtg={booksCtg}
-              active={active}
-              setActive={setActive}
-            />
-          </View>
-          <View style={styles.listContainer}>
-            <FlatList
-              numColumns={2}
-              data={books}
-              renderItem={({ item }) => <BookList key={item.id} item={item} />}
-              keyExtractor={(item) => item.brand}
-            />
-          </View>
-        </View>
+        </ScrollView>
       )}
     </Container>
   );
@@ -120,7 +135,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'gainsboro',
   },
   listContainer: {
-    width: '100%',
+    height: height,
     flex: 1,
     flexDirection: 'row',
     alignItems: 'flex-start',
