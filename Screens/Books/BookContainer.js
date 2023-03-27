@@ -8,13 +8,14 @@ import Banner from '../../Shared/Banner';
 import CategoryFilter from './CategoryFilter';
 
 const data = require('../../assets/data/books.json');
-const categories = require('../../assets/data/categories.json');
+const bookCategories = require('../../assets/data/categories.json');
 
 const BookContainer = () => {
   const [books, setBooks] = useState([]);
   const [booksFiltered, setBooksFiltered] = useState([]);
   const [highlight, setHighlight] = useState();
   const [categories, setCategories] = useState([]);
+  const [booksCtg, setBooksCtg] = useState([]);
   const [active, setActive] = useState();
   const [initState, setInitState] = useState([]);
 
@@ -22,7 +23,7 @@ const BookContainer = () => {
     setBooks(data);
     setBooksFiltered(data);
     setHighlight(false);
-    setCategories(categories);
+    setCategories(bookCategories);
     setActive(-1);
     setInitState(data);
 
@@ -53,6 +54,20 @@ const BookContainer = () => {
     setHighlight(false);
   };
 
+  // Categories
+  const changeCtg = (ctg) => {
+    {
+      ctg == 'all'
+        ? [setBooksCtg(initState), setActive(true)]
+        : [
+            setBooksCtg(
+              books.filter((i) => i.category.$oid === ctg),
+              setActive(true)
+            ),
+          ];
+    }
+  };
+
   return (
     <Container>
       <Header searchBar rounded>
@@ -77,7 +92,13 @@ const BookContainer = () => {
             <Banner />
           </View>
           <View>
-            <CategoryFilter />
+            <CategoryFilter 
+              categories={categories}
+              CategoryFilter={changeCtg}
+              booksCtg={booksCtg}
+              active={active}
+              setActive={setActive}
+            />
           </View>
           <View style={styles.listContainer}>
             <FlatList
