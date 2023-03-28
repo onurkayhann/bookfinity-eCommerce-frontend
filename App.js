@@ -1,5 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, LogBox } from 'react-native';
+import { LogBox } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+
+// Navigators
+import Main from './Navigators/Main';
 
 // Ignore console messages on the device
 LogBox.ignoreAllLogs(true);
@@ -10,19 +14,10 @@ import BookContainer from './Screens/Books/BookContainer';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <NavigationContainer>
       <Header />
-      <BookContainer />
+      <Main />
       <StatusBar style='auto' />
-    </View>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
