@@ -19,7 +19,7 @@ var { height } = Dimensions.get('window');
 const data = require('../../assets/data/books.json');
 const bookCategories = require('../../assets/data/categories.json');
 
-const BookContainer = () => {
+const BookContainer = (props) => {
   const [books, setBooks] = useState([]);
   const [booksFiltered, setBooksFiltered] = useState([]);
   const [highlight, setHighlight] = useState();
@@ -95,7 +95,10 @@ const BookContainer = () => {
       </Header>
 
       {highlight == true ? (
-        <SearchedBooks booksFiltered={booksFiltered} />
+        <SearchedBooks
+          booksFiltered={booksFiltered}
+          navigation={props.navigation}
+        />
       ) : (
         <ScrollView>
           <View>
@@ -114,7 +117,13 @@ const BookContainer = () => {
             {booksCtg.length > 0 ? (
               <View style={styles.listContainer}>
                 {booksCtg.map((item) => {
-                  return <BookList key={item._id.$oid} item={item} />;
+                  return (
+                    <BookList
+                      navigation={props.navigation}
+                      key={item._id.$oid}
+                      item={item}
+                    />
+                  );
                 })}
               </View>
             ) : (

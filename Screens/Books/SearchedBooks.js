@@ -6,13 +6,15 @@ var { width } = Dimensions.get('window');
 
 const SearchedBooks = (props) => {
   const { booksFiltered } = props;
-  
+
   return (
     <Content style={{ width: width }}>
       {booksFiltered.length > 0 ? (
         booksFiltered.map((item) => (
           <ListItem
-            // onPress={navigation}
+            onPress={() => {
+              props.navigation.navigate('Book Detail', { item: item });
+            }}
             key={item._id.$oid}
             avatar
           >
