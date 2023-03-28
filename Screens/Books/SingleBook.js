@@ -21,7 +21,7 @@ const SingleBook = (props) => {
             source={{
               uri: item.image
                 ? item.image
-                : 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.allbutessentialtravel.co.uk%2Fportfolio%2Fwriting%2Fatmag%2F&psig=AOvVaw2n_9dt5wNQHoUJFmG8a2iI&ust=1679479060884000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCNDwxpvh7P0CFQAAAAAdAAAAABAD',
+                : 'https://www.allbutessentialtravel.co.uk/wp-content/uploads/2015/03/ATMag.jpg',
             }}
             resizeMode='contain'
             style={styles.image}
