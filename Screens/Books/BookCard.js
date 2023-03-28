@@ -21,7 +21,7 @@ const BookCard = (props) => {
         source={{
           uri: image
             ? image
-            : 'https://media.istockphoto.com/id/1402602559/photo/smiling-mixed-race-single-father-carrying-little-daughter-on-piggyback-with-copyspace.jpg?b=1&s=170667a&w=0&k=20&c=BtKQmVk7nsaCsar_AV24UyXJIec4clq83Fg77MKKyxQ=',
+            : 'https://www.allbutessentialtravel.co.uk/wp-content/uploads/2015/03/ATMag.jpg',
         }}
       />
       <View style={styles.card} />
