@@ -9,9 +9,9 @@ const Banner = () => {
 
   useEffect(() => {
     setBannerData([
-      'https://www.allbutessentialtravel.co.uk/wp-content/uploads/2015/03/ATMag.jpg',
-      'https://www.allbutessentialtravel.co.uk/wp-content/uploads/2015/03/ATMag.jpg',
-      'https://www.allbutessentialtravel.co.uk/wp-content/uploads/2015/03/ATMag.jpg',
+      'https://www.shutterstock.com/image-photo/conquering-mountain-peaks-by-cyclist-260nw-1498456337.jpg',
+      'https://images.squarespace-cdn.com/content/v1/54aa18afe4b0d6033e4fc329/1523815665784-9TWI9X0ZR1HLMHOYPUS4/about-banner.jpg',
+      'https://www.iowaparklands.com/wp-content/uploads/2021/04/mnt-bike-01.jpg',
     ]);
 
     return () => {
