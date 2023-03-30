@@ -18,10 +18,12 @@ import BookContainer from './Screens/Books/BookContainer';
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Header />
-      <Main />
-      <StatusBar style='auto' />
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Header />
+        <Main />
+        <StatusBar style='auto' />
+      </NavigationContainer>
+    </Provider>
   );
 }
