@@ -18,11 +18,11 @@ const styles = StyleSheet.create({
     marginBottom: 400,
     width: width,
     justifyContent: 'center',
-    alignContent: 'center',
+    alignItems: 'center',
   },
   title: {
-   fontSize: 30,
-  }
+    fontSize: 30,
+  },
 });
 
 export default FormContainer;
