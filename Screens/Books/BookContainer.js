@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import {
   View,
   StyleSheet,
@@ -8,6 +8,7 @@ import {
   Dimensions,
 } from 'react-native';
 import { Container, Header, Icon, Item, Input, Text } from 'native-base';
+import { useFocusEffect } from '@react-navigation/native';
 
 import BookList from './BookList';
 import SearchedBooks from './SearchedBooks';
@@ -28,24 +29,26 @@ const BookContainer = (props) => {
   const [active, setActive] = useState();
   const [initState, setInitState] = useState([]);
 
-  useEffect(() => {
-    setBooks(data);
-    setBooksFiltered(data);
-    setHighlight(false);
-    setCategories(bookCategories);
-    setBooksCtg(data);
-    setActive(-1);
-    setInitState(data);
+  useFocusEffect(
+    useCallback(() => {
+      setBooks(data);
+      setBooksFiltered(data);
+      setHighlight(false);
+      setCategories(bookCategories);
+      setBooksCtg(data);
+      setActive(-1);
+      setInitState(data);
 
-    return () => {
-      setBooks([]);
-      setBooksFiltered([]);
-      setHighlight();
-      setCategories([]);
-      setActive();
-      setInitState();
-    };
-  }, []);
+      return () => {
+        setBooks([]);
+        setBooksFiltered([]);
+        setHighlight();
+        setCategories([]);
+        setActive();
+        setInitState();
+      };
+    }, [])
+  );
 
   // Methods for books
   const searchBook = (text) => {

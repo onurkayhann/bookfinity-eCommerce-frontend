@@ -15,13 +15,6 @@
   },
   {
     "_id": {
-      "$oid": "5f15d54cf3a046427a1c26e3"
-    },
-    "name": "Bikes",
-    "__v": 0
-  },
-  {
-    "_id": {
       "$oid": "5f15d5b2cb4a6642bddc0fe7"
     },
     "name": "Locks",
@@ -32,13 +25,6 @@
       "$oid": "5f15d5b7cb4a6642bddc0fe8"
     },
     "name": "T-Shirts",
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "5f15d5cdcb4a6642bddc0f99"
-    },
-    "name": "Games",
     "__v": 0
   }
 ]

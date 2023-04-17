@@ -30,7 +30,7 @@
     "name": "Becoming Odyssa: Adventures on the Appalachian Trail",
     "description": "After graduating from college, Jennifer isn't sure what she wants to do with her life. Through inexperienced and unprepared, she feels drawn to the Appalachian Trail and sets out along on the long-distance footpath that stretches 2,175 miles from Georgia to Maine. ",
     "category": {
-      "$oid": "5f15d5b7cb4a6642bddc0fe8"
+      "$oid": "5f15d545f3a046427a1c26e2"
     },
     "countInStock": 10,
     "__v": 0
@@ -48,7 +48,7 @@
     "name": "The Shadow of Kilimanjaro: On Foot Across East Africa",
     "description": "In one of the most acclaimed travel and adventure books of the past year, Rick Ridgeway chronicles his trek from the summit of Mount Kilimanjaro to the Indian Ocean, through Kenya's famed Tsavo Park. His tale is, according to The Boston Globe, a gripping account of how it feels to be charged by an incensed elephant and kept awake at night by the roaring of stalking lions. But it is more than an adventure story. The Los Angeles Times noted that the pace of walking gives Ridgeway time to contemplate his great theme and the great men and women who have struggled with the conundrum of whether man can live at peace with the beasts. Ridgeway examines the effects of colonial expansion on the indigenous people, the landscape, and the animals, and contemplates the future for all of them.",
     "category": {
-      "$oid": "5f15d5b7cb4a6642bddc0fe8"
+      "$oid": "5f15d545f3a046427a1c26e2"
     },
     "countInStock": 10,
     "__v": 0
@@ -85,6 +85,78 @@
     "description": "Digitally connected lock",
     "category": {
       "$oid": "5f15d5cdcb4a6642bddc0fe9"
+    },
+    "countInStock": 2,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5f15da13e520d44421ed8e8i"
+    },
+    "image": "data:image/jpeg;base64,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",
+    "author": "Mauro Pereira",
+    "price": 500,
+    "rating": 5,
+    "numReviews": null,
+    "isFeatured": true,
+    "name": "Biketrace lock",
+    "description": "Digitally connected lock",
+    "category": {
+      "$oid": "5f15d5b2cb4a6642bddc0fe7"
+    },
+    "countInStock": 2,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5f15da13e520d44421ed8377"
+    },
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxPsjrvxQCSo5XTOr9FrppHW53NUCDj6hPC5YIV8ba4-zNgFKBEnsUN77SqVQTs-XAbSg&usqp=CAU",
+    "author": "Mauro Pereira",
+    "price": 500,
+    "rating": 5,
+    "numReviews": null,
+    "isFeatured": true,
+    "name": "Biketrace lock",
+    "description": "Digitally connected lock",
+    "category": {
+      "$oid": "5f15d5b2cb4a6642bddc0fe7"
+    },
+    "countInStock": 2,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5f15da13e520d44421ed8447"
+    },
+    "image": "https://www.biketrace.se/eng/images/biketrace-tshirt-white.png",
+    "author": "Mauro Pereira",
+    "price": 29,
+    "rating": 5,
+    "numReviews": null,
+    "isFeatured": true,
+    "name": "Biketrace T-shirt white",
+    "description": "comfortable t-shirt",
+    "category": {
+      "$oid": "5f15d5b7cb4a6642bddc0fe8"
+    },
+    "countInStock": 2,
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5f15da13e520d44421fr8777"
+    },
+    "image": "https://www.biketrace.se/eng/images/biketrace-tshirt-dark.png",
+    "author": "Mauro Pereira",
+    "price": 29,
+    "rating": 5,
+    "numReviews": null,
+    "isFeatured": true,
+    "name": "Biketrace T-shirt dark",
+    "description": "comfortable t-shirt",
+    "category": {
+      "$oid": "5f15d5b7cb4a6642bddc0fe8"
     },
     "countInStock": 2,
     "__v": 0
