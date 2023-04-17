@@ -15,7 +15,7 @@ import * as actions from '../../Redux/Actions/cartActions';
 var { width } = Dimensions.get('window');
 
 const BookCard = (props) => {
-  const { name, price, image, countInStock } = props;
+  const { name, author, price, image, description, countInStock } = props;
 
   return (
     <View style={styles.container}>

@@ -29,7 +29,7 @@ const SingleBook = (props) => {
         </View>
         <View style={styles.contentContainer}>
           <H1 style={styles.contentHeader}>{item.name}</H1>
-          <Text style={styles.contentText}>{item.brand}</Text>
+          <Text style={styles.contentText}>by {item.author}</Text>
         </View>
         {/* TODO: Description, Rich Description, and available */}
       </ScrollView>
