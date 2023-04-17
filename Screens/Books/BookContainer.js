@@ -28,6 +28,7 @@ const BookContainer = (props) => {
   const [booksCtg, setBooksCtg] = useState([]);
   const [active, setActive] = useState();
   const [initState, setInitState] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useFocusEffect(
     useCallback(() => {
@@ -38,6 +39,7 @@ const BookContainer = (props) => {
       setBooksCtg(data);
       setActive(-1);
       setInitState(data);
+      setLoading(false);
 
       return () => {
         setBooks([]);
@@ -82,62 +84,71 @@ const BookContainer = (props) => {
   };
 
   return (
-    <Container>
-      <Header searchBar rounded>
-        <Item>
-          <Icon name='ios-search' />
-          <Input
-            placeholder='Search for products'
-            onFocus={openList}
-            onChangeText={(text) => searchBook(text)}
-          />
-          {highlight == true ? (
-            <Icon onPress={onBlur} name='ios-close' />
-          ) : null}
-        </Item>
-      </Header>
-
-      {highlight == true ? (
-        <SearchedBooks
-          booksFiltered={booksFiltered}
-          navigation={props.navigation}
-        />
-      ) : (
-        <ScrollView>
-          <View>
-            <View>
-              <Banner />
-            </View>
-            <View>
-              <CategoryFilter
-                categories={categories}
-                CategoryFilter={changeCtg}
-                booksCtg={booksCtg}
-                active={active}
-                setActive={setActive}
+    <>
+      {loading == false ? (
+        <Container>
+          <Header searchBar rounded>
+            <Item>
+              <Icon name='ios-search' />
+              <Input
+                placeholder='Search for products'
+                onFocus={openList}
+                onChangeText={(text) => searchBook(text)}
               />
-            </View>
-            {booksCtg.length > 0 ? (
-              <View style={styles.listContainer}>
-                {booksCtg.map((item) => {
-                  return (
-                    <BookList
-                      navigation={props.navigation}
-                      key={item._id.$oid}
-                      item={item}
-                    />
-                  );
-                })}
+              {highlight == true ? (
+                <Icon onPress={onBlur} name='ios-close' />
+              ) : null}
+            </Item>
+          </Header>
+
+          {highlight == true ? (
+            <SearchedBooks
+              booksFiltered={booksFiltered}
+              navigation={props.navigation}
+            />
+          ) : (
+            <ScrollView>
+              <View>
+                <View>
+                  <Banner />
+                </View>
+                <View>
+                  <CategoryFilter
+                    categories={categories}
+                    CategoryFilter={changeCtg}
+                    booksCtg={booksCtg}
+                    active={active}
+                    setActive={setActive}
+                  />
+                </View>
+                {booksCtg.length > 0 ? (
+                  <View style={styles.listContainer}>
+                    {booksCtg.map((item) => {
+                      return (
+                        <BookList
+                          navigation={props.navigation}
+                          key={item._id.$oid}
+                          item={item}
+                        />
+                      );
+                    })}
+                  </View>
+                ) : (
+                  <View style={[styles.center, { height: height / 2 }]}>
+                    <Text>No products found</Text>
+                  </View>
+                )}
               </View>
-            ) : (
-              <View style={[styles.center, { height: height / 2 }]}>
-                <Text>No products found</Text>
-              </View>
-            )}
-          </View>
-        </ScrollView>
+            </ScrollView>
+          )}
+        </Container>
+      ) : (
+        // Loading
+        <Container style={[styles.center, { backgroundColor: '"#f2f2f2' }]}>
+          <ActivityIndicator size='large' color='#c0392b' />
+        </Container>
       )}
-    </Container>
+    </>
   );
 };
 
