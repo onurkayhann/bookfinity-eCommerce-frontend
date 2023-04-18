@@ -38,7 +38,18 @@ const SingleBook = (props) => {
           <Text style={styles.price}>${item.price}</Text>
         </Left>
         <Right>
-          <Button title='Add' />
+          <Button
+            title='Add'
+            onPress={() => {
+              props.addItemToCart(item),
+                Toast.show({
+                  topOffset: 60,
+                  type: 'success',
+                  text1: `${item.name} added to Cart`,
+                  text2: 'Go to your Cart to complete order',
+                });
+            }}
+          />
         </Right>
       </View>
     </Container>

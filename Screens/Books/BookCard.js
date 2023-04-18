@@ -7,6 +7,7 @@ import {
   Text,
   Button,
 } from 'react-native';
+import Toast from 'react-native-toast-message';
 
 // Redux
 import { connect } from 'react-redux';
@@ -38,7 +39,15 @@ const BookCard = (props) => {
           <Button
             title={'Add'}
             color={'#d00355'}
-            onPress={() => props.addItemToCart(props)}
+            onPress={() => {
+              props.addItemToCart(props);
+              Toast.show({
+                topOffset: 60,
+                type: 'success',
+                text1: `${name.substring(0, 12)}... added to Cart`,
+                text2: 'Go to your cart to complete order',
+              });
+            }}
           />
         </View>
       ) : (

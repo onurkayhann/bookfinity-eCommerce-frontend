@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
   price: {
     fontSize: 18,
     margin: 20,
-    color: 'red', // find better color here
+    color: '#c0392b', 
   },
   hiddenContainer: {
     flex: 1,
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   hiddenButton: {
-    backgroundColor: 'red',
+    backgroundColor: '#c0392b',
     justifyContent: 'center',
     alignItems: 'flex-end',
     paddingRight: 25,
