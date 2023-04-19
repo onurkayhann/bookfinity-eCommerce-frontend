@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 
 import FormContainer from '../../Shared/Form/FormContainer';
 import Input from '../../Shared/Form/Input';
-
 import Error from '../../Shared/Error';
 
 const Login = (props) => {
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -20,7 +20,7 @@ const Login = (props) => {
     if (email === '' || password === '') {
       setError('Please fill in your credentials');
     } else {
-      console.log('Success');
+      console.log('Logout');
     }
   };
 
