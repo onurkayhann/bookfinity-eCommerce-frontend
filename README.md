@@ -52,7 +52,7 @@ Will be deployed in the future, stay tuned.
 - User can filter through prices and products
 - Users will be able to use PayPal or VISA to pay for their shopping in the future
 
-## Sitemap for backend
+## Sitemap for frontend
 
 <img src='./assets/sitemap_frontend.png' alt='sitemap' />
 
