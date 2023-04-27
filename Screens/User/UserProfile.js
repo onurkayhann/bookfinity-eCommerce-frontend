@@ -2,7 +2,11 @@ import React from 'react';
 import { View, Text, ScrollView, Button, StyleSheet } from 'react-native';
 import { Container } from 'native-base';
 
-const UserProfile = () => {
+const UserProfile = (props) => {
+  handleLogout = () => {
+    props.navigation.navigate('Login');
+  };
+
   return (
     <Container style={styles.container}>
       <ScrollView contentContainerStyle={styles.subContainer}>
@@ -12,7 +16,7 @@ const UserProfile = () => {
           <Text style={{ margin: 10 }}>Phone: your phone here</Text>
         </View>
         <View style={{ marginTop: 80 }}>
-          <Button title={'Sign Out'} />
+          <Button title={'Sign Out'} onPress={handleLogout} />
         </View>
       </ScrollView>
     </Container>
