@@ -35,7 +35,7 @@
 | Register: <br /> `${api}/users/register`                          | POST    | Public  |
 | Login: <br /> `${api}/users/login`                                | POST    | Private |
 | Logout: <br /> `/api/users/logout`                                | GET     | Private |
-| Book camp: <br /> `${api}/orders`                                 | POST    | Private |
+| User purchases: <br /> `${api}/orders`                            | POST    | Private |
 
 ## Deployment
 
