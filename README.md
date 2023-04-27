@@ -1,4 +1,4 @@
-<h1 align='center'>Biketrace Shop - backend | MERN mobile application</h1>
+<h1 align='center'>Biketrace Shop - frontend | MERN mobile application</h1>
 <br />
 
 ## Project information
@@ -18,25 +18,6 @@
 - [ExpressJS](https://expressjs.com/)
 - [MongoDB](https://www.mongodb.com/)
 
-### Routes and navigation
-
-| Path                                                              | Type    | Access  |
-| ----------------------------------------------------------------- | ------- | ------- |
-| **Products/Magazines**                                                      |
-| Get all camps: <br /> `${api}/books`                              | GET     | Public  |
-| Get products based belt degree: <br /> `${api}/books/{id}`        | GET     | Public  |
-| **Admin**                                                         |
-| Create a product: <br /> `${api}/books/{id}`                      | POST    | Admin   |
-| Delete a product: <br /> `/${api}/books/{id}`                     | DELETE  | Admin   |
-| Update a product: <br /> `${api}/books/{id}`                      | PUT     | Admin   |
-| Update a user: <br /> `/api/user/admin/{userId}`                  | PATCH   | Admin   |
-| Delete a user: <br /> `/api/user/{userId}`                        | DELETE  | Admin   |
-| **User**                                                          |         |
-| Register: <br /> `${api}/users/register`                          | POST    | Public  |
-| Login: <br /> `${api}/users/login`                                | POST    | Private |
-| Logout: <br /> `/api/users/logout`                                | GET     | Private |
-| User purchases: <br /> `${api}/orders`                            | POST    | Private |
-
 ## Deployment
 
 Will be deployed in the future, stay tuned.
@@ -47,7 +28,7 @@ Will be deployed in the future, stay tuned.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/onurkayhann/bookfinity-eCommerce-backend
+   git clone https://github.com/onurkayhann/bookfinity-eCommerce-frontend
    ```
 2. Install NPM packages (In the client and server folders)
    ```sh
@@ -55,9 +36,7 @@ Will be deployed in the future, stay tuned.
    ```
 3. Create your .env
    ```JS
-   API_URL = Create your URL
-   SECRET = Your secret auth
-   CONNECTION_STRING = Your connection string to MongoDB
+   REACT_APP_API_URL= http://localhost:8000/api/v1
    ```
 4. Run
    ```sh
@@ -83,6 +62,11 @@ I used Mocha, Mocha-Http, Chai, and Chai-Http to test some important routes on t
 ## License
 
 MIT license
+
+## About Biketrace
+
+Biketrace is a startup company, and funded by Mauro Pereira at 2020. They're at the early stage of their development, they don't earn money. The company depends on students, and the valueable help from them. The idea is to create smart locks for Bikecycles.
+[Visit Biketrace here](https://www.biketrace.se/eng/index.html) 
 
 ## Thanks to providers
 
